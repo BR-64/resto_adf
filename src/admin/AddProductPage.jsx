@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import addProduct from '../api/AddProduct';
+// import addProduct from '../api/AddProduct';
+import { addProduct } from '../service/productService.js';
 import BackButton from '../components/BackButton';
 
 const AddProductForm = () => {

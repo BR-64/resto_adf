@@ -29,9 +29,9 @@ const NavbarRes = () => {
                 Login
               </Link>
             )}
-            <Link to='/' className='hover:text-gray-300'>
+            {/* <Link to='/' className='hover:text-gray-300'>
               Home
-            </Link>
+            </Link> */}
             <Link to='/admin' className='hover:text-gray-300'>
               Admin Page
             </Link>
@@ -87,9 +87,9 @@ const NavbarRes = () => {
               Login
             </Link>
           )}
-          <Link to='/' className='hover:text-gray-300'>
+          {/* <Link to='/' className='hover:text-gray-300'>
             Home
-          </Link>
+          </Link> */}
           <Link to='/admin' className='hover:text-gray-300'>
             Admin Page
           </Link>

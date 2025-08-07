@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import getProducts from '../api/GetProducts';
+// import getProducts from '../api/GetProducts';
+import { getProducts } from '../service/productService';
 import ProductCardAdmin from '../components/ProductCardAdmin';
-import addProduct from '../api/AddProduct';
+// import addProduct from '../api/AddProduct';
 import { Link, useNavigate } from 'react-router-dom';
 
 const ProductsPage = () => {
