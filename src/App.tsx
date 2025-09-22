@@ -11,6 +11,9 @@ import LoginPage from './pages/LoginPage.jsx';
 import SignupPageAdmin from './pages/SignupPage_admin.jsx';
 import ForgotPassPage from './pages/ForgotPassPage.jsx';
 import ResetPassPage from './pages/ResetPassPage.jsx';
+import OrderPage from './pages/OrderPage.jsx';
+import EditOrderPage from './admin/EditOrderPage.jsx';
+import UserManagementPage from './pages/UserManagementPage.jsx';
 
 //layout
 import DashboardLayout from './layout/DashboardLayout.jsx';
@@ -52,6 +55,9 @@ function App() {
               <Route path='/admin' element={<AdminPage />} />
               <Route path='/' element={<HomePage />} />
               <Route path='/edit/:id' element={<EditproductPage />} />
+              <Route path='/ordersadmin' element={<OrderPage />} />
+              <Route path='/edit/order/:id' element={<EditOrderPage />} />
+              <Route path='/userManagement' element={<UserManagementPage />} />
             </Route>
           </Routes>
         </Router>

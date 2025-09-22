@@ -9,12 +9,12 @@ export default function AdminSidebar() {
         <Link to='/productsAdmin' className='hover:text-gray-300'>
           Products
         </Link>
-        <a href='#' className='hover:bg-gray-700 p-2 rounded'>
+        <Link to='/ordersAdmin' className='hover:text-gray-300'>
           Orders
-        </a>
-        <a href='#' className='hover:bg-gray-700 p-2 rounded'>
+        </Link>
+        <Link to='/userManagement' className=''>
           Users
-        </a>
+        </Link>
         {/* <a href='#' className='hover:bg-gray-700 p-2 rounded'>
           Settings
         </a> */}

@@ -45,7 +45,7 @@ function Login() {
   return (
     <div className='min-h-screen flex items-center justify-center'>
       <div className='bg-white p-8 rounded-xl shadow-lg w-full max-w-md'>
-        <h2 className='text-2xl font-semibold text-center mb-6'>Login</h2>
+        <h2 className='text-2xl font-semibold text-center mb-6'>Admin Login</h2>
         <form onSubmit={handleLogin} className='space-y-4'>
           <div>
             <input

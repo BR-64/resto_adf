@@ -41,6 +41,7 @@ const addProduct = async (formData) => {
 };
 
 const getProducts = async () => {
+  console.log('Fetching products...');
   const response = await axios.get(`${API_URL}/list`, {
     headers: {
       Authorization: `Bearer ${localStorage.getItem('authToken')}`,
@@ -50,9 +51,13 @@ const getProducts = async () => {
   return response.data;
 };
 
-const deleteProductById = async (productId) => {
-  const response = await axios.delete(`${API_URL}/${productId}`);
-  return response.data;
+const deleteProductById = async (id) => {
+  const res = await axios.delete(`${API_URL}/delete/${id}`);
+  if (res.status === 200) {
+    console.log('Product deleted successfully');
+  } else {
+    console.error(res);
+  }
 };
 
 export { addProduct, getProducts, deleteProductById };

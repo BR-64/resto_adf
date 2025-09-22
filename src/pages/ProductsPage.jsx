@@ -1,24 +1,40 @@
 import React, { useEffect, useState } from 'react';
 // import { addProduct } from '../service/productService.js';
-import { getProducts } from '../service/productService';
+import { getProducts, deleteProductById } from '../service/productService';
 import { Link, useNavigate } from 'react-router-dom';
 
 const ProductsPage = () => {
   const [productsData, setProductsData] = useState([]);
+  const loadData = async () => {
+    try {
+      const result = await getProducts();
+      setProductsData(result);
+      console.log(productsData);
+    } catch (err) {
+      console.error('Failed to loaad Data', err);
+    }
+  };
+
   useEffect(() => {
     /// fetch data from database
-    const loadData = async () => {
-      try {
-        const result = await getProducts();
-        setProductsData(result);
-        console.log(productsData);
-      } catch (err) {
-        console.error('Failed to loaad Data', err);
-      }
-    };
-
     loadData();
   }, []);
+
+  const handleDelete = async (id) => {
+    const confirmDelete = window.confirm(
+      'Are you sure you want to delete this product?'
+    );
+    if (!confirmDelete) return;
+
+    try {
+      await deleteProductById(id);
+      setProductsData((prev) => prev.filter((product) => product._id !== id));
+    } catch (err) {
+      console.error('Failed to delete product:', err);
+    }
+
+    loadData();
+  };
 
   return (
     <div className='content bg-gray-100 text-black'>

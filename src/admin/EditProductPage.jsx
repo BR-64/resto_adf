@@ -70,7 +70,7 @@ const EditProduct = () => {
         },
       });
       alert('Product updated!');
-      navigate('/');
+      navigate(0);
     } catch (err) {
       setError('Failed to update product');
     }
