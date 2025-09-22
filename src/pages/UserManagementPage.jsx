@@ -6,10 +6,12 @@ const UserManagement = () => {
   const [form, setForm] = useState({ username: '', email: '', role: 'user' });
   const [editingUser, setEditingUser] = useState(null);
 
+  const API_URL = `${import.meta.env.VITE_API_URL}/api/users`;
+
   // Fetch users
   const fetchUsers = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/users');
+      const res = await axios.get(`${API_URL}`);
       setUsers(res.data);
     } catch (err) {
       console.error(err);
@@ -48,7 +50,7 @@ const UserManagement = () => {
   // Delete user
   const handleDelete = async (id) => {
     if (window.confirm('Delete this user?')) {
-      await axios.delete(`http://localhost:5000/api/users/${id}`);
+      await axios.delete(`${API_URL}/${id}`);
       fetchUsers();
     }
   };

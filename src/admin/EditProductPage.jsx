@@ -18,7 +18,7 @@ const EditProduct = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/products/${id}`)
+      .get(`${import.meta.env.VITE_API_URL}/api/products/${id}`)
       .then((res) => {
         setProduct((prev) => ({
           ...prev,
@@ -62,13 +62,17 @@ const EditProduct = () => {
     //   }
     // }
     try {
-      await axios.put(`http://localhost:5000/api/products/${id}`, product, {
-        headers: {
-          'Content-Type': 'application/json',
+      await axios.put(
+        `${import.meta.env.VITE_API_URL}/api/products/${id}`,
+        product,
+        {
+          headers: {
+            'Content-Type': 'application/json',
 
-          //   'Content-Type': 'multipart/form-data',
-        },
-      });
+            //   'Content-Type': 'multipart/form-data',
+          },
+        }
+      );
       alert('Product updated!');
       navigate(0);
     } catch (err) {

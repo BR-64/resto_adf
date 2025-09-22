@@ -5,6 +5,8 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const ProductsPage = () => {
   const [productsData, setProductsData] = useState([]);
+  const STORAGE_URL = `${import.meta.env.VITE_STORAGE_URL}`;
+
   const loadData = async () => {
     try {
       const result = await getProducts();
@@ -71,7 +73,7 @@ const ProductsPage = () => {
                   <td className='p-2 border'>
                     <img
                       className='w-24 h-30 object-cover '
-                      src={`http://localhost:5000/${product.file[0]}`}
+                      src={`${STORAGE_URL}/${product.file[0]}`}
                       alt=''
                     />
                   </td>

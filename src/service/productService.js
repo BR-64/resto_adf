@@ -1,7 +1,8 @@
 // src/services/productService.js
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/products';
+// const API_URL = 'http://localhost:5000/api/products';
+const API_URL = `${import.meta.env.VITE_API_URL}/api/products`;
 
 const addProduct = async (formData) => {
   console.log('adding product');
@@ -20,16 +21,12 @@ const addProduct = async (formData) => {
   console.log(newForm);
 
   try {
-    const response = await axios.post(
-      'http://localhost:5000/api/products/add',
-      newForm,
-      {
-        headers: {
-          // 'Content-Type': 'application/json',
-          'Content-Type': 'multipart/form-data',
-        },
-      }
-    );
+    const response = await axios.post(`${API_URL}/add`, newForm, {
+      headers: {
+        // 'Content-Type': 'application/json',
+        'Content-Type': 'multipart/form-data',
+      },
+    });
 
     console.log(response.message);
     console.log(response);

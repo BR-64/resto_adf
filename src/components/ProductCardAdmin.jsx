@@ -13,7 +13,7 @@ const ProductCardAdmin = ({
   const handleDelete = async () => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/products/delete/${id}`,
+        `${import.meta.env.VITE_API_URL}/products/delete/${id}`,
         {
           method: 'DELETE',
         }
