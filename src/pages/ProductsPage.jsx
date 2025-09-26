@@ -73,7 +73,8 @@ const ProductsPage = () => {
                   <td className='p-2 border'>
                     <img
                       className='w-24 h-30 object-cover '
-                      src={`${STORAGE_URL}/${product.file[0]}`}
+                      // src={`${STORAGE_URL}/${product.file[0]}`}
+                      src={`${product.file[0]}`}
                       alt=''
                     />
                   </td>
